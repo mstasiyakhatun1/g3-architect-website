@@ -108,9 +108,9 @@ main > section{
     width: 240px;
     height: 240px;
     border-radius: 8px;
-    justify-content: center;
-    align-items: center;
     text-align: center;
+    align-items: center;
+    justify-content: center;
 }
 .fact-number{
     font-size: 2.8rem;
@@ -126,15 +126,38 @@ main > section{
 .fact-description{
     max-width: 540px;
 }
+ /* sponsor related styles */
+.sponsor-info{
+    max-width: 540px;
+    margin: 50px auto;
+    text-align: center;
+}
+.sponsor-companies{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+.sponsor-companies img{
+    filter: grayscale(100%);
+}
 /* responsive media query */
-@media screen and (max-width: 576 px) {
+@media screen and (max-width: 576px) {
     .navbar, 
     .nav-links, 
     .teams{
         flex-direction: column;
     }
-    .team-img-container{
-        grid-template-columns: repeat(1, 1fr);
+    .team-img-container,
+     .facts-container, 
+     .sponsor-companies{
+        grid-template-columns: 1fr;
+    }
+    .facts-container{
+        justify-items: center;
+        gap: 24px;
+    }
+    .sponsor-companies{
+        justify-items: center;
+        gap: 50px;
     }
     .our-features{
         margin-left: 20px;
@@ -148,6 +171,11 @@ main > section{
     .our-features{
         margin: 50px auto;
         text-align: center;
+    }
+    .sponsor-companies, .facts-container{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 50px;
+        justify-items: center;
     }
     /* our-features a text-align ta ami nije dici jate ata tab a aro sundor dekhai */
 }
